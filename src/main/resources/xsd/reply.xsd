@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:urn = "urn:mFlow"
+           targetNamespace="urn:mFlow"
+           elementFormDefault="qualified">
+
+    <xs:element name = "reply">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name = "correlationId" type="xs:string" />
+                <xs:element name = "status" type="xs:int" />
+                <xs:element name = "payload">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name ="document" type="xs:base64Binary"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

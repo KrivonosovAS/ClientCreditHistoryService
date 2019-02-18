@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:urn = "urn:mFlow"
+           targetNamespace="urn:mFlow"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="client.xsd"/>
+
+    <xs:element name="request">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="correlationId"/>
+                <xs:element ref="payload"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

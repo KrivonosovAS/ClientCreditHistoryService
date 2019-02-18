@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>ClientHistory</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<div class="form-wrap">
+    <div class="profile">
+        <img src = "../static/image/image.jpg" th:src="@{/image/image.jpg}" width="150" height="150">
+        <p>Пожалуйста,укажите ваши данные для получения кредитной истории.</p>
+    </div>
+        <form action="#" th:action="@{/}" th:object="${payload}" method="post">
+            <div>
+                <label for="SecondName">Фамилия</label>
+                <input
+                        type="text"
+                        id="SecondName"
+                        pattern="[A-Za-zА-Яа-яЁё]{1,30}"
+                        title="Поле должно содержать только буквы. Не более 30 символов."
+                        th:field ="*{lastName}" required>
+            </div>
+            <div>
+                <label for="firstName">Имя</label>
+                <input
+                        type="text"
+                        id="firstName"
+                        pattern="[A-Za-zА-Яа-яЁё]{1,30}"
+                        title="Поле должно содержать только буквы.Не более 30 символов."
+                        th:field ="*{firstName}" required>
+            </div>
+            <div>
+                <label for="patrName">Отчество</label>
+                <input
+                        type="text"
+                        id="patrName"
+                        pattern="[A-Za-zА-Яа-яЁё]{1,30}"
+                        title="Поле должно содержать только буквы.Не более 30 символов."
+                        th:field ="*{patrName}" required>
+            </div>
+            <div>
+                <p>Паспорт</p>
+            </div>
+            <div>
+                <label for="series">Серия</label>
+                <input
+                        type="text"
+                        id="series"
+                        pattern="[0-9]{4}"
+                        title="Серия пасспорта - 4 цифры."
+                        th:field ="*{docSeries}" required>
+            </div>
+            <div>
+                <label for="number">Номер</label>
+                <input
+                        type="text"
+                        id="number"
+                        pattern="[0-9]{6}"
+                        title="Номер пасспорта - 6 цифр."
+                        th:field ="*{docNumber}" required >
+            </div>
+            <div>
+                <label for="date">Дата выдачи</label>
+                <input
+                        type="date"
+                        id="date"
+                        title="Дата выдачи паспорта не может быть больше текущей даты."
+                        th:field ="*{docIssueDate}" required>
+            </div>
+            <button type="submit" value="Submit">Отправить</button>
+        </form>
+        </div>
+<script>
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var maxDate = year + '-' + month + '-' + day;
+    document.getElementById("date").setAttribute("max", maxDate);
+</script>
+</body>
+</html>

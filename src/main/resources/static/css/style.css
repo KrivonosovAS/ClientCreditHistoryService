@@ -1,0 +1,60 @@
+.form-wrap {
+    width: 550px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-image: -webkit-gradient(linear,left top,right bottom,color-stop(0, gray),color-stop(1, #D4D4D4));
+    border-radius: 20px;
+    padding: 10px;
+    margin: auto;
+    box-shadow: 20px 30px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.form-wrap *{transition: .1s linear}
+.profile {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+form {
+    background-image: -webkit-gradient(linear,left top,right bottom,color-stop(0, #c81f3f),color-stop(1, #E66060));
+    width: 60%;
+    padding: 50px;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    margin: auto;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+form div {
+    margin-bottom: 15px;
+    position: relative;
+}
+p{
+    padding: 2px 2px;
+    font-size: 15px;
+    color: white;
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    border-width: 0;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+    margin: 0;
+    width: 80%;
+    padding: 10px 30px;
+    background: #e6e6e6;
+    box-shadow: inset 0 0 0 1px #0a4678;
+}
+
+button {
+    padding: 10px 0;
+    border-width: 0;
+    border-radius: 5px 5px 5px 5px;
+    display: block;
+    width: 120px;
+    margin: 25px auto 0;
+    background: #0a4678;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    text-transform: uppercase;
+}
